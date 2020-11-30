@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
+    "start:watch": "nodemon --ext '*' --watch bin --watch public --watch routes --watch views --delay 2 --exec 'npm start'",
     "test": "mocha",
+    "test:watch": "nodemon --ext '*' --delay 2 --exec 'npm test'",
     "jsfmt": "eslint *.js routes/**/*.js test/**/*.js --fix",
     "jslint": "eslint *.js routes/**/*.js test/**/*.js"
   },
@@ -13,7 +15,9 @@
     "debug": "~2.6.9",
     "ejs": "^3.1.5",
     "express": "~4.16.1",
+    "express-session": "^1.17.1",
     "http-errors": "~1.6.3",
+    "lokijs": "^1.5.11",
     "morgan": "~1.9.1"
   },
   "devDependencies": {
@@ -24,6 +28,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "mocha": "^8.2.1",
+    "nodemon": "^2.0.6",
     "supertest": "^6.0.1"
   }
 }
